@@ -15,7 +15,7 @@ export const EmployeeProvider = ({ children }) => {
     setEmployees((prev) => [employee, ...prev]);
   };
 
-  const removeEmployeeById = (employeeId) => {
+  const deleteEmployeeById = (employeeId) => {
     setEmployees((prev) =>
       prev.filter((employee) => employee.id !== employeeId)
     );
@@ -23,7 +23,7 @@ export const EmployeeProvider = ({ children }) => {
 
   return (
     <EmployeeContext.Provider
-      value={{ employees, addEmployee, removeEmployeeById }}
+      value={{ employees, addEmployee, deleteEmployeeById }}
     >
       {children}
     </EmployeeContext.Provider>
